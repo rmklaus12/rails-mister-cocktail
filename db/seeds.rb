@@ -1,3 +1,13 @@
+require 'faker'
+
+puts 'Creating 15 fake cocktails...'
+15.times do
+  cocktail = Cocktail.new(
+    name:    Faker::Coffee.unique.blend_name
+  )
+  cocktail.save!
+end
+
 Ingredient.create(name: 'Lemon')
 Ingredient.create(name: 'ice')
 Ingredient.create(name: 'mint leaves')
@@ -17,3 +27,5 @@ Ingredient.create(name: 'Bacardi 151')
 Ingredient.create(name: 'Galliano')
 Ingredient.create(name: 'Tecate')
 Ingredient.create(name: 'Bloody Mary mix')
+
+puts 'Finished!'

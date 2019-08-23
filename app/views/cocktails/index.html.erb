@@ -8,10 +8,10 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <%= link_to "Add a Cocktail", cocktail_path(@cocktail)  %>
+        <%= link_to "Add a Cocktail", new_cocktail_path, class: "nav-link"  %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Messages</a>
+        <a class="nav-link" href="#">Add Ingredients</a>
       </li>
     </ul>
   </div>
@@ -26,14 +26,16 @@
 <div class="container">
   <div class="row">
     <% @cocktails.each do |cocktail| %>
-      <div class="col-12 col-md-6 col-lg-3">
-        <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://loremflickr.com/286/180/cocktail');">
-          <div class="card-description">
-            <h2><%= cocktail.name %></h2>
-          </div>
-          <%= link_to "", cocktail_path(cocktail), class: 'card-link' %>
+    <div class="col-12 col-md-6 col-lg-3">
+      <div class="card" style="width: 18rem;">
+        <img src="https://loremflickr.com/1800/1000/cocktail" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= cocktail.name %></h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+          <%= link_to "Go Drink", cocktail_path(cocktail), class: 'btn btn-primary' %>
         </div>
       </div>
-    <% end %>
+    </div>
+  <% end %>
   </div>
 </div>
