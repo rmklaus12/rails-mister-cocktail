@@ -28,11 +28,14 @@
     <% @cocktails.each do |cocktail| %>
     <div class="col-12 col-md-6 col-lg-3">
       <div class="card" style="width: 18rem;">
-        <img src="https://loremflickr.com/1800/1000/cocktail" class="card-img-top" alt="...">
-        <div class="card-body">
+        <% if cocktail.photo.file == nil %>
+          <img src="https://loremflickr.com/286/200/cocktail">
+        <% else %>
+          <%= cl_image_tag cocktail.photo, class: 'img-fluid' %>
+        <% end %>
+        <div class="card-body" style="min-height: 170px;">
           <h5 class="card-title"><%= cocktail.name %></h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <%= link_to "Go Drink", cocktail_path(cocktail), class: 'btn btn-primary' %>
+          <%= link_to "Go Drink", cocktail_path(cocktail), class: 'btn btn-primary align-self-end' %>
         </div>
       </div>
     </div>
