@@ -30,8 +30,9 @@
         <% else %>
           <%= cl_image_tag cocktail.photo, class: 'img-fluid' %>
         <% end %>
-        <div class="card-body">
+        <div class="card-body" style="min-height: 170px;">
           <h5 class="card-title"><%= cocktail.name %></h5>
+          <%= link_to "Go Drink", cocktail_path(cocktail), class: 'btn btn-primary align-self-end' %>
         </div>
       </div>
     </div>
