@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: charmdev
+  api_key: '758286288159677'
+  api_secret: bTDM9IaUZswaiXCZ8OvdsGRGJUk
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: charmdev
+  api_key: '758286288159677'
+  api_secret: bTDM9IaUZswaiXCZ8OvdsGRGJUk
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: charmdev
+  api_key: '758286288159677'
+  api_secret: bTDM9IaUZswaiXCZ8OvdsGRGJUk
+  enhance_image_tag: true
+  static_file_support: false
