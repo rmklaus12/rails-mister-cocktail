@@ -1,7 +1,12 @@
 <h2>Cocktail Details</h2>
 
   <h2><%= @cocktail.name %></h2>
-<%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill %>
+
+  <% if @cocktail.photo.file == nil %>
+    <img src="https://loremflickr.com/286/200/cocktail">
+  <% else %>
+    <%= cl_image_tag @cocktail.photo, height: 300, width: 400, crop: :fill  %>
+  <% end %>
 
   <ul>
   <% @cocktail.doses.each do |dose| %>
@@ -12,3 +17,4 @@
 <%= link_to 'Add Dose', new_cocktail_dose_path(@cocktail)  %>
 
 <p><%= link_to "Back to List", {:action => 'index' }%></p>
+
